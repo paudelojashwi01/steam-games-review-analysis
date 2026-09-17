@@ -12,7 +12,7 @@ Most Steam games get *some* positive reviews, the platform's ratings skew positi
 
 - **Data:** [Steam Games Dataset 2025](https://www.kaggle.com/datasets/artermiloff/steam-games-dataset) (Kaggle), 89,618 games, cleaned down to 53,199 after removing entries with too few reviews to score reliably.
 - **Model:** Logistic regression (`class_weight='balanced'` to handle the 7.3% positive rate), trained on price, discount, achievements, playtime (average and median), peak concurrent users, required age, and platform availability.
-- **Iteration:** An earlier version predicted a single threshold (`pct_pos_total >= 70`) and returned a ROC-AUC of just 0.591 barely better than random. That blurred together games that just barely cleared "Mostly Positive" with universally beloved titles. Sharpening the label to isolate genuinely rare, unambiguous hits — and evaluating with average precision rather than raw accuracy, given the class imbalance — is what surfaced real signal.
+- **Iteration:** An earlier version predicted a single threshold (`pct_pos_total >= 70`) and returned a ROC-AUC of just 0.591 barely better than random. That blurred together games that just barely cleared "Mostly Positive" with universally beloved titles. Sharpening the label to isolate genuinely rare, unambiguous hits and evaluating with average precision rather than raw accuracy, given the class imbalance — is what surfaced real signal.
 
 ## Results
 
