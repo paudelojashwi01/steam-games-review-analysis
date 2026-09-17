@@ -1,4 +1,4 @@
-# Predicting Steam "Hits" — Reach × Quality Classification
+# Predicting Steam "Hits"  Reach × Quality Classification
 
 Can structured game attributes (price, playtime, achievements, platform support) predict which games become genuine hits on Steam not just well-reviewed, but well-reviewed *and* widely played?
 
