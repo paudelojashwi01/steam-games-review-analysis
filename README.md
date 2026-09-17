@@ -4,7 +4,7 @@ Can structured game attributes (price, playtime, achievements, platform support)
 
 ## The question
 
-Most Steam games get *some* positive reviews, the platform's ratings skew positive overall, so "is this game liked?" is a weak question on its own. The more useful question is whether a game achieves broad, well-reviewed reach: a "hit" defined here as a game that clears the **top quartile of review quality** (≥91% positive) **and** the **top quartile of review volume** (≥238 total reviews) simultaneously. Only 7.3% of games in the dataset (3,876 of 53,199) clear both bars — a genuinely rare, meaningful target rather than an arbitrary cutoff.
+Most Steam games get *some* positive reviews, the platform's ratings skew positive overall, so "is this game liked?" is a weak question on its own. The more useful question is whether a game achieves broad, well-reviewed reach: a "hit" defined here as a game that clears the **top quartile of review quality** (≥91% positive) **and** the **top quartile of review volume** (≥238 total reviews) simultaneously. Only 7.3% of games in the dataset (3,876 of 53,199) clear both bars a genuinely rare, meaningful target rather than an arbitrary cutoff.
 
 `num_reviews_total` is deliberately excluded from the feature set, since it's used to define part of the label including it would let the model trivially learn the quartile cutoff instead of any real relationship.
 
