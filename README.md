@@ -4,13 +4,13 @@ Can structured game attributes (price, playtime, achievements, platform support)
 
 ## The question
 
-Most Steam games get *some* positive reviews — the platform's ratings skew positive overall, so "is this game liked?" is a weak question on its own. The more useful question is whether a game achieves broad, well-reviewed reach: a "hit" defined here as a game that clears the **top quartile of review quality** (≥91% positive) **and** the **top quartile of review volume** (≥238 total reviews) simultaneously. Only 7.3% of games in the dataset (3,876 of 53,199) clear both bars a genuinely rare, meaningful target rather than an arbitrary cutoff.
+Most Steam games get *some* positive reviews the platform's ratings skew positive overall, so "is this game liked?" is a weak question on its own. The more useful question is whether a game achieves broad, well-reviewed reach: a "hit" defined here as a game that clears the **top quartile of review quality** (≥91% positive) **and** the **top quartile of review volume** (≥238 total reviews) simultaneously. Only 7.3% of games in the dataset (3,876 of 53,199) clear both bars a genuinely rare, meaningful target rather than an arbitrary cutoff.
 
 `num_reviews_total` is deliberately excluded from the feature set, since it's used to define part of the label including it would let the model trivially learn the quartile cutoff instead of any real relationship.
 
 ## Iteration: why there are two notebooks here
 
-**[`steam_games_v1_first_attempt.ipynb`](steam_games_v1_first_attempt.ipynb)** the first version, predicting a single threshold (`pct_pos_total >= 70`, Steam's own "Mostly Positive" cutoff). This returned a ROC-AUC of just **0.591** — barely better than random because the label itself was noisy: a game that just barely clears 70% and a universally beloved 95%-positive game both got the same label. Kept in the repo rather than deleted, because the diagnosis that came out of this failure directly motivated the fix below.
+**[`steam_games_v1_first_attempt.ipynb`](steam_games_v1_first_attempt.ipynb)** the first version, predicting a single threshold (`pct_pos_total >= 70`, Steam's own "Mostly Positive" cutoff). This returned a ROC-AUC of just **0.591**  barely better than random because the label itself was noisy: a game that just barely clears 70% and a universally beloved 95%-positive game both got the same label. Kept in the repo rather than deleted, because the diagnosis that came out of this failure directly motivated the fix below.
 
 **[`steam_games_hit_classification.ipynb`](steam_games_hit_classification.ipynb)** the refined version below, isolating genuinely rare, unambiguous hits instead. This is the model whose results are described in this README.
 
